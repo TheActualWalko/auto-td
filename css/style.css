@@ -1,0 +1,291 @@
+*, *:before, *:after{
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family:"Avenir Next";
+  -webkit-font-smoothing:antialiased;
+  background-color:#242424;
+  color:white;
+  overflow:hidden;
+}
+
+*{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:600;
+}
+
+button{
+  height:41px;
+  width:180px;
+  border:1px solid #f5a623;
+  background-color:#f5a623;
+  color:#242424;
+  border-radius:3px;
+  font-size:14px;
+  float:right;
+}
+
+button:hover{
+  cursor:pointer;
+}
+
+button:focus, button:active{
+  outline:none;
+}
+
+button.disabled{
+  background-color:#242424;
+  color:#f5a623;
+}
+
+.round-title{
+  font-size:20px;
+}
+
+.main-footer{
+  padding:10px 0;
+}
+
+.game-phase{
+  font-size:14px;
+  width:400px;
+  float:left;
+  margin:0;
+}
+
+.game-wrap{
+  width:645px;
+  margin:0 auto;
+}
+
+.game-board{
+  background-color:#3e3523;
+  width:645px;
+  height:645px;
+  border:2px solid #3e3523;
+  border-top:3px solid #3e3523;
+  border-left:3px solid #3e3523;
+  border-radius:2px;
+  position:relative;
+}
+
+
+.minion{
+  transform:translate3d(0,0,0);
+  position:absolute;
+  transition:left 0.4s linear, top 0.4s linear;
+}
+
+.minion:before{
+  display:block;
+  content:"";
+  position:absolute;
+  left:20%;
+  right:20%;
+  top:10%;
+  bottom:20%;
+  background-color:#ca293d;
+  border-radius:50%;
+}
+.minion:after{
+  display:block;
+  content:"";
+  position:absolute;
+  left:20%;
+  right:20%;
+  top:10%;
+  height:60%;
+  background-color:#d04f5f;
+  border-radius:50%;
+}
+
+.minion-health-bar-wrap{
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  height:8px;
+  margin-top:-6px;
+  background-color:#000;
+  z-index:3;
+}
+
+.minion-health-bar{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  background-color:#ca293d;
+}
+
+
+.projectile{
+  transform:translate3d(0,0,0);
+  position:absolute;
+  transition:left 0.1s ease, top 0.1s ease;
+}
+
+.projectile:before{
+  display:block;
+  content:"";
+  position:absolute;
+  left:30%;
+  right:30%;
+  top:10%;
+  bottom:50%;
+  background-color:#cab93d;
+  border-radius:50%;
+}
+
+.player, .player-target{
+  transform:translate3d(0,0,0);
+  position:absolute;
+  transition:left 0.1s ease, top 0.1s ease;
+}
+
+.player:before{
+  display:block;
+  content:"";
+  position:absolute;
+  left:20%;
+  right:20%;
+  top:5%;
+  bottom:20%;
+  background-color:#ad7518;
+  border-radius:7.5%;
+}
+.player:after{
+  display:block;
+  content:"";
+  position:absolute;
+  left:20%;
+  right:20%;
+  top:5%;
+  height:60%;
+  background-color:#f5a623;
+  border-radius:7.5%;
+}
+
+.player-target{
+  border:3px solid rgba(255,255,255,0.5);
+  border-radius:3px;
+}
+
+.tile{
+  position:absolute;
+  background-color:#473d28;
+  border-right:1px solid #3e3523;
+  border-bottom:1px solid #3e3523;
+}
+
+.tile.grass{
+  background-color:#306c3c;
+  overflow:visible;
+}
+.tile.grass:after{
+  display:block;
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:-2.5%;
+  top:-20%;
+  background-size:100% 100%;
+  background-image:url(../img/grass.svg);
+}
+
+.tile.rock:before,
+.player-target.carrying:before{
+  display:block;
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:-10%;
+  bottom:10%;
+  background-color:#6d6d6d;
+  border-radius:7.5%;
+}
+.tile.rock:after,
+.player-target.carrying:after{
+  display:block;
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:-10%;
+  height:75%;
+  background-color:#979797;
+  border-radius:7.5%;
+}
+
+.player-target.carrying:before,
+.player-target.carrying:after{
+  opacity:0.5;
+}
+
+.tile.tower:before{
+  display:block;
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:-10%;
+  bottom:10%;
+  background-color:#3568a3;
+  border-radius:7.5%;
+}
+.tile.tower:after{
+  display:block;
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:-10%;
+  height:75%;
+  background-color:#4a90e2;
+  border-radius:7.5%;
+}
+
+.tower-top{
+  position:absolute;
+  top:5%;
+  right:27.5%;
+  left:27.5%;
+  bottom:50%;
+  border-radius:50%;
+  background-color:#3568a3;
+  z-index:2;
+}
+
+.tower-top:before{
+  display:block;
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  top:12%;
+  bottom:12%;
+  border-radius:50%;
+  background-color:#4a90e2;
+}
+.tower-top:after{
+  display:block;
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  top:0%;
+  bottom:24%;
+  border-radius:50%;
+  background-color:#9ec3ef;
+}
+
+.tile.empty{
+}

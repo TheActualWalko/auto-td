@@ -1,0 +1,11 @@
+{
+  "globalDependencies": {
+    "expect.js": "registry:dt/expect.js#0.3.1+20160317120654",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "react": "registry:dt/react#0.14.0+20160817201227",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723"
+  }
+}
