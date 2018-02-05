@@ -2,5 +2,5 @@
 
 `npm i && npm run start`
 
-Then localhost:8080 in a browser!
+Then open localhost:8080 in a browser!
 
